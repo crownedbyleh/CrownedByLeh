@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crowned By Leh | Salon de Coiffure & Tresses Royales</title>
+
+  <!-- Polices Google Fonts : Cinzel, Montserrat & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Chargement du widget Cal.com -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+  </script>
+</head>
+<body>
+
+  <!-- EN-TÊTE PRINCIPALE : LOGO À GAUCHE, MENU & ACTIONS À DROITE -->
+  <header class="main-header">
+    <div class="header-container">
+
+      <!-- 1. LOGO -->
+      <div class="logo">
+        <a href="#accueil" class="logo-link" data-tab="accueil" aria-label="Crowned By Leh - Accueil">
+          <div class="logo-brand-wrap">
+            <div class="logo-text-col">
+              <div class="logo-main-line">
+                <span class="logo-crownedby">
+                  CROWNEDB<span class="crowned-letter">Y<span class="crown-icon-wrap">
+                      <svg class="crown-svg" viewBox="0 0 64 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fff8d1"/>
+                            <stop offset="25%" stop-color="#f5c252"/>
+                            <stop offset="65%" stop-color="#d49a24"/>
+                            <stop offset="100%" stop-color="#94610c"/>
+                          </linearGradient>
+                          <filter id="crownGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.5"/>
+                          </filter>
+                        </defs>
+                        <path d="M8 35 L56 35 L51 14 L39 24 L32 9 L25 24 L13 14 Z" fill="url(#crownGrad)" filter="url(#crownGlow)"/>
+                        <path d="M6 35 Q32 38 58 35 L57 39 Q32 42 7 39 Z" fill="url(#crownGrad)"/>
+                        <circle cx="13" cy="13" r="2.8" fill="#ffffff"/>
+                        <circle cx="25" cy="23.5" r="2.2" fill="#ffffff"/>
+                        <circle cx="32" cy="8.5" r="3.2" fill="#ffffff"/>
+                        <circle cx="39" cy="23.5" r="2.2" fill="#ffffff"/>
+                        <circle cx="51" cy="13" r="2.8" fill="#ffffff"/>
+                      </svg>
+                    </span>
+                  </span>
+                </span>
+                <span class="logo-leh">Leh</span>
+              </div>
+              <div class="logo-underline"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. MENU DE NAVIGATION & SÉLECTEUR DE LANGUE -->
+      <div class="header-right-side">
+        <nav class="nav-menu" id="navMenu">
+          <a href="#accueil" class="nav-link active" data-tab="accueil" data-i18n="nav.accueil">ACCUEIL</a>
+          <a href="#disponibilites" class="nav-link" data-tab="disponibilites" data-i18n="nav.disponibilites">DISPONIBILITÉS</a>
+          <a href="#services" class="nav-link" data-tab="services" data-i18n="nav.services">SERVICES</a>
+          <a href="#politiques" class="nav-link" data-tab="politiques" data-i18n="nav.politiques">POLITIQUES</a>
+          <a href="#plus" class="nav-link" data-tab="plus" data-i18n="nav.plus">PLUS</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-select">
+            <select id="langSelect" aria-label="Sélection de langue">
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navigation mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BANDEAU D'ANNONCE -->
+  <div class="ticker-bar">
+    <p data-i18n="ticker.text">✨ Pour les coiffures non-listées, envoyez moi un message.</p>
+    <p class="ticker-sub" data-i18n="ticker.sub">⚠️ Je ne tresse pas les cheveux courts</p>
+  </div>
+
+  <!-- CONTENU PRINCIPAL DES ONGLETS -->
+  <main class="tabs-container">
+
+    <!-- ONGLET 1 : ACCUEIL -->
+    <section id="accueil" class="tab-content active">
+
+      <!-- HERO BANNER -->
+      <div class="hero-section">
+        <img class="hero-bg" src="images/bg-logo.jpeg" alt="Tresses africaines royales">
+        <div class="hero-overlay">
+
+          <div class="hero-badge" data-i18n="hero.badge">Bienvenue chez Crowned By Leh</div>
+          <div class="hero-cta-group">
+            <button class="btn-hero-primary" onclick="scrollToHomeServices()" data-i18n="hero.ctaServices">Découvrir mes services</button>
+            <button class="btn-hero-secondary" onclick="switchTab('disponibilites')" data-i18n="hero.ctaBooking">Prendre rendez-vous</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRÉSENTATION DES POINTS FORTS -->
+      <div class="welcome-intro-section">
+        <div class="intro-cards-container">
+          <div class="intro-feature-card">
+            <div class="feature-icon">✨</div>
+            <h3 data-i18n="features.feat1Title">Rallonges Incluses</h3>
+            <p data-i18n="features.feat1Desc">Tous mes forfaits comprennent des mèches.</p>
+          </div>
+          <div class="intro-feature-card">
+            <div class="feature-icon">👑</div>
+            <h3 data-i18n="features.feat2Title">Soin & Beauté Royale</h3>
+            <p data-i18n="features.feat2Desc">Une attention méticuleuse portée à la santé de votre cuir chevelu et de vos racines.</p>
+          </div>
+          <div class="intro-feature-card">
+            <div class="feature-icon">📍</div>
+            <h3 data-i18n="features.feat3Title">Terrebonne</h3>
+            <p data-i18n="features.feat3Desc">Un lieu intime, chaleureux et professionnel pour votre confort absolu.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES AFFICHÉS SUR LA PAGE D'ACCUEIL -->
+      <div class="services-section" id="homeServicesSection">
+        <h2 class="section-title" data-i18n="services.title">MES SERVICES</h2>
+        <div class="title-gold-divider"></div>
+        <p class="section-subtitle" data-i18n="services.subtitle">Sélectionnez votre prestation pour voir les détails et réserver</p>
+
+        <div class="services-grid" id="homeServicesGrid">
+          <!-- Rendu dynamique via js/script.js -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ONGLET 2 : DISPONIBILITÉS -->
+    <section id="disponibilites" class="tab-content">
+      <div class="booking-section">
+
+        <div class="booking-header">
+          <h2 data-i18n="booking.title">Programmer votre service</h2>
+          <p data-i18n="booking.subtitle">Consultez nos disponibilités en temps réel et réservez votre créneau en un clic.</p>
+        </div>
+
+        <!-- SÉLECTEUR DE COIFFURE + GROSSEUR AU-DESSUS DU CALENDRIER -->
+        <div class="booking-service-pills-wrap">
+          <span class="pills-label" data-i18n="booking.selectPillLabel">Coiffure sélectionnée :</span>
+          <div class="booking-service-pills" id="bookingServicePills">
+            <!-- Rempli dynamiquement -->
+          </div>
+
+          <div id="bookingSizeWrap" class="hidden" style="margin-top:18px;">
+            <span class="pills-label" data-i18n="booking.selectSizeLabel">Grosseur :</span>
+            <div class="booking-service-pills" id="bookingSizePills"></div>
+          </div>
+        </div>
+
+        <!-- CALENDRIER -->
+        <div class="booking-wrapper">
+          <div class="calendar-column">
+            <div id="calEmbedContainer" class="cal-embed-wrapper"></div>
+          </div>
+
+          <div class="availability-column">
+            <div class="service-details-box" id="serviceDetailsBox"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ONGLET 3 : SERVICES -->
+    <section id="services" class="tab-content">
+      <div class="services-section">
+        <h2 class="section-title" data-i18n="services.title">MES SERVICES</h2>
+        <div class="title-gold-divider"></div>
+        <p class="section-subtitle" data-i18n="services.subtitle">Sélectionnez votre prestation pour voir les détails et réserver</p>
+
+        <div class="services-grid" id="servicesGrid">
+          <!-- Rendu dynamique via js/script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ONGLET : POLITIQUES -->
+    <section id="politiques" class="tab-content">
+      <div class="policies-section">
+        <div class="policies-header">
+          <span class="policies-tag">👑 Crowned By Leh</span>
+          <h2 data-i18n="policies.title">POLITIQUES DE RÉSERVATION</h2>
+          <div class="title-gold-divider"></div>
+          <p class="section-subtitle" data-i18n="policies.subtitle">Veuillez lire attentivement les conditions avant de prendre rendez-vous.</p>
+        </div>
+
+        <!-- GRILLE DES CONDITIONS (STYLE FLYER) -->
+        <div class="policies-grid">
+          
+          <div class="policy-card highlight-card">
+            <div class="policy-icon">⏱️</div>
+            <h3 data-i18n="policies.c2Title">Retards & Annulation</h3>
+            <p data-i18n="policies.c2Desc">
+              Une période de grâce de 15 minutes est accordée. Des frais de 15 $ s'appliquent entre 15 et 30 minutes de retard. <strong>Après 30 minutes de retard, le rendez-vous est automatiquement annulé</strong> et l'acompte est conservé.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">💳</div>
+            <h3 data-i18n="policies.c1Title">Acompte (Dépôt)</h3>
+            <p data-i18n="policies.c1Desc">
+              Un acompte non remboursable de 25 $ est exigé par virement Interac pour bloquer et confirmer votre date. Ce montant est déduit de votre facture finale.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">🔄</div>
+            <h3 data-i18n="policies.c3Title">Reports & Modifications</h3>
+            <p data-i18n="policies.c3Desc">
+              Vous pouvez reporter votre rendez-vous jusqu'à 48h à l'avance sans perdre votre acompte (1 seul report autorisé, dans un délai raisonnable).
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">🚫</div>
+            <h3 data-i18n="policies.c4Title">Absence (No-Show)</h3>
+            <p data-i18n="policies.c4Desc">
+              Toute absence sans avertissement préalable entraîne l'annulation immédiate, la perte de l'acompte et le blocage des réservations futures.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">💵</div>
+            <h3 data-i18n="policies.c5Title">Modes de Paiement</h3>
+            <p data-i18n="policies.c5Desc">
+              Le solde restant se règle le jour même de la prestation en <strong>argent comptant (cash)</strong> ou par <strong>virement Interac</strong>.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">📍</div>
+            <h3 data-i18n="policies.c6Title">Lieu & Accompagnateurs</h3>
+            <p data-i18n="policies.c6Desc">
+              L'adresse exacte à Terrebonne vous sera transmise par confirmation. Aucun accompagnateur ou enfant n'est accepté afin de préserver le calme du salon.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- SECTION AVANT LE RENDEZ-VOUS (CHECKLIST) -->
+        <div class="before-appt-box">
+          <div class="before-appt-header">
+            <h3 data-i18n="policies.beforeTitle">Avant votre rendez-vous</h3>
+            <span class="before-sub" data-i18n="policies.beforeSub">Checklist préparation cheveux</span>
+          </div>
+
+          <div class="checklist-grid">
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <p data-i18n="policies.chk1">Cheveux propres, fraîchement lavés et 100% secs.</p>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <p data-i18n="policies.chk2">Cheveux démêlés et étirés au séchoir (Blowout) de la racine aux pointes.</p>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">✓</span>
+              <p data-i18n="policies.chk3">Pas d'huiles lourdes, graisses ou beurres épais dans les cheveux le jour J.</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- BOUTON D'ACTION VERS RÉSERVATION -->
+        <div class="policies-cta">
+          <button class="btn-hero-primary" onclick="switchTab('disponibilites')" data-i18n="hero.ctaBooking">Prendre rendez-vous</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONGLET 4 : PLUS (À PROPOS DE LEH & CONTACT) -->
+    <section id="plus" class="tab-content">
+      <div class="about-section">
+        <div class="about-inner">
+          <div class="about-crown-badge">👑 Crowned By Leh</div>
+          <h2 data-i18n="about.title">À propos de Leh</h2>
+          <div class="about-bio-text">
+            <p data-i18n="about.p1">
+              Bienvenue dans mon univers ! Je suis <strong>Leh</strong> (Lehishna), passionnée depuis toujours par l'art ancestral et contemporain des tresses africaines et des coiffures protectrices.
+            </p>
+            <p data-i18n="about.p2">
+              À travers <strong>Crowned By Leh</strong>, ma mission est de faire en sorte que chaque cliente se sente véritablement couronnée, confiante et sublime. Mon espace situé à <strong>Terrebonne</strong> (accueillant également les clientes du Grand Montréal et de Repentigny) est un lieu chaleureux, privé et bienveillant où le respect de vos cheveux naturels et de votre cuir chevelu est ma priorité absolue.
+            </p>
+            <p data-i18n="about.p3">
+              Chaque coiffure est réalisée avec une précision d'orfèvre, en utilisant exclusivement des mèches et rallonges <em>100% natural hair</em> incluses dans tous nos tarifs. Prenez rendez-vous dès aujourd'hui et offrez à votre chevelure la couronne royale qu'elle mérite.
+            </p>
+          </div>
+
+          <div class="about-stats-grid">
+            <div class="about-stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label" data-i18n="about.statNatural">Natural Hair Inclus</span>
+            </div>
+            <div class="about-stat-item">
+              <span class="stat-number">5★</span>
+              <span class="stat-label" data-i18n="about.statQuality">Finition & Soin Expert</span>
+            </div>
+            <div class="about-stat-item">
+              <span class="stat-label" data-i18n="about.statCities">Terrebonne</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE DE CONTACT -->
+      <div class="contact-section">
+        <div class="contact-inner">
+          <h2 data-i18n="contact.title">Contactez-moi</h2>
+          <p class="contact-subtitle" data-i18n="contact.subtitle">Une question, un style sur-mesure ou une demande particulière ? Écrivez-moi directement ci-dessous.</p>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" name="nom" data-i18n-placeholder="contact.nom" placeholder="Nom complet" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" data-i18n-placeholder="contact.email" placeholder="Adresse e-mail" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="telephone" data-i18n-placeholder="contact.telephone" placeholder="Numéro de téléphone">
+            </div>
+            <div class="form-group full-width">
+              <textarea name="message" data-i18n-placeholder="contact.message" placeholder="Votre message ou précisions sur votre coiffure souhaitée..." required></textarea>
+            </div>
+            <button type="submit" class="btn-send-message" data-i18n="contact.envoyer">ENVOYER LE MESSAGE</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIED DE PAGE AVEC LIEN INSTAGRAM -->
+  <footer class="main-footer">
+    <div class="footer-container">
+
+      <div class="footer-brand-summary">
+        <div class="footer-logo-title">CROWNEDBY <span class="footer-leh">Leh</span></div>
+        <p class="footer-tagline">Salon de coiffure & tresses protectrices de haute voltige</p>
+      </div>
+
+      <div class="footer-instagram-section">
+        <a href="https://www.instagram.com/crownedby.leh/" target="_blank" rel="noopener noreferrer" class="footer-instagram-btn" aria-label="Compte Instagram de Crowned By Leh">
+          <svg class="instagram-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span class="instagram-text" data-i18n="footer.instagramText">Suivez-moi sur Instagram @crownedby_leh</span>
+        </a>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter-area">
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" data-i18n-placeholder="footer.newsletterPlaceholder" placeholder="Saisissez votre e-mail ici" required>
+          <button type="submit" data-i18n="footer.abonner">S'ABONNER</button>
+        </form>
+      </div>
+
+      <!-- INFOS DE CONTACT -->
+      <div class="footer-contact-info">
+        <div class="contact-email">
+          <strong data-i18n="footer.email">E-mail :</strong>
+          <a href="mailto:crownedbyleh@gmail.com">crownedbyleh@gmail.com</a>
+        </div>
+        <div class="divider-vertical"></div>
+        <div class="contact-locations">
+          <span>Terrebonne</span>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <a href="#" data-i18n="footer.legal1">Politique de confidentialité</a>
+        <a href="#" data-i18n="footer.legal2">Termes et conditions</a>
+        <a href="#" data-i18n="footer.legal3">Mentions légales</a>
+        <a href="#" data-i18n="footer.legal4">Politique de cookies</a>
+      </div>
+
+      <p class="copyright" data-i18n="footer.copyright">© 2026 par Crowned By Leh — Fait avec amour pour la coiffure protectrice</p>
+    </div>
+  </footer>
+
+  <!-- MODALE 1 : GROSSEUR → LONGUEUR ET PRIX → SUPPLÉMENTS -->
+  <div id="serviceModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close" id="serviceModalClose" aria-label="Fermer">✕</button>
+      <div class="modal-service-title" id="modalServiceTitle"></div>
+      <div class="modal-service-meta" id="modalServiceMeta"></div>
+
+      <!-- ÉTAPE 1 : GROSSEUR -->
+      <div id="modalSizeSection">
+        <div class="modal-section-label" id="modalSelectSizeLabel">Choisir la grosseur</div>
+        <div id="modalSizesList"></div>
+      </div>
+
+      <!-- ÉTAPE 2 : LONGUEUR + SUPPLÉMENTS -->
+      <div id="modalLengthSection" class="hidden">
+        <button class="modal-back" id="modalBackToSize" type="button">← Changer la grosseur</button>
+
+        <div class="modal-section-label" id="modalSelectLengthLabel">Sélectionner Longueur et prix</div>
+        <div id="modalLengthsList" class="modal-lengths-wrap"></div>
+
+        <div class="modal-section-label" id="modalSelectAddonsLabel">Sélectionner des suppléments</div>
+        <div class="modal-addons-subtitle" id="modalColorsLabel">Couleurs</div>
+        <div id="modalAddonsList" class="modal-addons-wrap"></div>
+      </div>
+
+      <button class="btn-next" id="serviceModalNext">Suivant</button>
+    </div>
+  </div>
+
+  <!-- MODALE 2 : RÉSUMÉ DU RDV -->
+  <div id="summaryModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close" id="summaryModalClose" aria-label="Fermer">✕</button>
+      <div class="summary-modal-title" id="summaryModalTitle">Résumé du RDV</div>
+
+      <div class="summary-service-block">
+        <span class="summary-modify-link" id="summaryModifyLink">Modifier</span>
+        <div class="summary-service-name" id="summaryServiceName"></div>
+        <div class="summary-service-line" id="summaryServiceWith"></div>
+        <div class="summary-service-line" id="summaryServiceLocation"></div>
+        <div class="summary-service-line" id="summaryServiceDuration"></div>
+        <div class="summary-service-line summary-price-bold" id="summaryServicePrice"></div>
+      </div>
+
+      <button class="btn-add-service" id="summaryAddServiceBtn">+ Ajouter un service</button>
+      <button class="btn-programmer" id="summaryProgrammerBtn">Programmer</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
